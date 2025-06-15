@@ -1,0 +1,40 @@
+# Logs
+logs
+*.log
+pm-debug.log*
+npm-error.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+web_modules/
+
+# Build artifacts
+dist/
+build/
+.vite/
+
+# Compiled output
+*.o
+*.ko
+*.obj
+*.ilk
+*.meta
+*.suo
+*.user
+*.ncb
+*.ide
+*.pyc
+*.class
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.history
+
+# OS generated files
+.DS_Store
+.Trashes
+Thumbs.db

@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('/fonts/ProductSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-font: 'Poppins', 'Montserrat', sans-serif;
+    --code-font: 'Montserrat', 'Poppins', monospace;
+    --background: 245 253 252; /* #F5FDFC */
+    --foreground: 24 79 72;    /* #184f48 */
+    --primary: 25 177 150;     /* #19B196 - Vibrant Teal Green */
+    --primary-foreground: 255 255 255;
+    --accent: 230 251 248;     /* #e6fbf8 - Soft Teal */
+    --accent-foreground: 24 83 78;
+    --muted: 208 240 238;      /* #d0f0ee */
+    --muted-foreground: 56 158 144;
+    --card: 255 255 255;
+    --card-foreground: 24 79 72;
+    --radius: 24px;
+    --glass-bg: rgba(255,255,255,0.22);
+    --glass-blur: 22px;
+    --glass-border: rgba(25,177,150,0.14);
+
+    --teal-pulse1: #96e5e0;
+    --teal-pulse2: #20CFC7;
+    --teal-pulse3: #0F766E;
+
+    --montserrat: 'Montserrat', monospace;
+    --poppins: 'Poppins', sans-serif;
+  }
+  body {
+    @apply bg-background text-foreground font-poppins;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  code, .chat-code, .chat-bot-text-mono {
+    font-family: var(--code-font) !important;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Montserrat', 'Poppins', sans-serif !important;
+    letter-spacing: -0.015em;
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--montserrat), monospace;
+    font-weight: 700;
+  }
+  .font-mono {
+    font-family: var(--montserrat), monospace;
+  }
+  .font-poppins {
+    font-family: var(--poppins);
+  }
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border-radius: 2xl;
+    border: 1.5px solid var(--glass-border);
+    box-shadow: 0 8px 42px 0 rgba(25,177,150,0.13);
+  }
+  .shadow-lg-glass {
+    box-shadow: 0 12px 36px 0 rgba(25,177,150,0.19);
+  }
+  .bg-auth-bg {
+    background-image: url('/lovable-uploads/4f48b4e7-a7c9-421d-b367-b513e16dc068.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .teal-pulse {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+  }
+  .teal-pulse-circle {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0; margin: auto;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: radial-gradient(ellipse at center, var(--teal-pulse2) 50%, transparent 100%);
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 0;
+    animation: pulseTeal 1.3s infinite;
+  }
+  @keyframes pulseTeal {
+    0% { transform: scale(1); opacity: 0.70; }
+    50% { transform: scale(1.3); opacity: 0.28; }
+    100% { transform: scale(1.06); opacity: 0.60; }
+  }
+  .glass-input {
+    @apply glass-card;
+    background: rgba(255,255,255,0.34);
+    border-radius: 2xl;
+    box-shadow: 0 3px 18px rgba(25,177,150,0.08);
+  }
+  .radial-hero-bg {
+    background: radial-gradient(circle at 60% 30%, rgba(32,207,199,0.32) 0%, rgba(12,229,184,0.18) 45%, rgba(160,255,236,0.12) 100%);
+    /* Fallback for browsers that don't support gradients */
+    background-color: #eafffa;
+  }
+  .scrollbar-none {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  }
+  .scrollbar-none::-webkit-scrollbar { /* Chrome, Safari, Opera*/
+    display: none;
+  }
+}
+
